@@ -2,6 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Cours/MBDS/JAVA_EE/TP3/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-war/web/operation/newoperation.xhtml</file>
+            <file>file:/D:/Cours/MBDS/JAVA_EE/TP3/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-war/src/java/managedBean/OperationDetailsMBean.java</file>
+        </group>
     </open-files>
 </project-private>
