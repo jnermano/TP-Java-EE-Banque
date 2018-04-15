@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TP3">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-ejb/build/generated-sources/ap-source-output"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-ejb/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-war/src/java"/>
+        <property name="context-root" value="TP3"/>
+        <property name="java-output-path" value="/TP3/TP3CompteBancaireErmanoArielleBrutus/TP3CompteBancaireErmanoArielleBrutus-ejb/build/classes"/>
+    </wb-module>
+</project-modules>

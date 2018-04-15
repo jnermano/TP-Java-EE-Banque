@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Nouvelle operation</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="../template/template_admin.xhtml">
+            <ui:define name = "content">
+
+                <div class="col-md-6">
+
+                    <f:view>
+
+                        <h3><h:outputText value="Create/Edit"/></h3>
+
+
+                        <div class="alert-danger col-md-6" style="margin: 10px;" >
+                            <h:outputText value="#{OperationDetailsMBean.erreurs}"/>
+                        </div>
+
+                        <h:form class="form-horizontal">
+
+
+                            <div class="form-group">
+                                <h:outputLabel  class="control-label col-sm-2" value="TypeTransaction:" for="typeTransaction" />
+                                <div class="col-sm-10">
+                                    <h:selectOneMenu  class="form-control s_type_transaction" id="typeTransaction" value="#{OperationDetailsMBean.details.typeTransaction}" title="TypeTransaction"
+                                                      converter="#{OperationDetailsMBean.typeOperationConverter}" >
+                                        <!-- TODO: update below reference to list of available items-->
+                                        <f:selectItems value="#{OperationDetailsMBean.allTypeOperations}"
+                                                       var="item" itemLabel="#{item.type}" itemValue="#{item}" />
+                                    </h:selectOneMenu>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group" id="div_debit_trans">
+                                <h:outputLabel class="control-label col-sm-2"  value="CompteDebiteur:" for="compteDebiteur" />
+                                <div class="col-sm-10">
+                                    <h:selectOneMenu  class="form-control" id="compteDebiteur" value="#{OperationDetailsMBean.details.compteDebiteur}" title="CompteDebiteur"
+                                                      converter="#{OperationDetailsMBean.compteBancaireConverter}">
+
+                                        <f:selectItems class="form-control" value="#{OperationDetailsMBean.comptesBancaire}"
+                                                       var='item' itemLabel="#{item.nom} [Solde : #{item.solde} HTG]" itemValue="#{item}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="form-group">
+                                <h:outputLabel class="control-label col-sm-2"  value="Montant:" for="montant" />
+                                <div class="col-sm-10">
+                                    <h:inputText class="form-control"  id="montant" value="#{OperationDetailsMBean.details.montant}" title="Montant" />
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <h:outputLabel class="control-label col-sm-2"  value="CompteCrediteur:" for="compteCrediteur" />
+                                <div class="col-sm-10">
+                                    <h:selectOneMenu class="form-control"  id="compteCrediteur" value="#{OperationDetailsMBean.details.compteCrediteur}" title="CompteCrediteur"
+                                                     converter="#{OperationDetailsMBean.compteBancaireConverter}" >
+
+                                        <f:selectItems value="#{OperationDetailsMBean.comptesBancaire}"
+                                                       var='item' itemLabel="#{item.nom} [Solde : #{item.solde} HTG]" itemValue="#{item}"/>
+                                    </h:selectOneMenu>
+                                </div>
+                            </div>
+
+<!--                            <div class="form-group">
+                                <h:outputLabel class="control-label col-sm-2"  value="Datecreated:" for="datecreated" />
+                                <div class="col-sm-10">
+                                    <h:inputText  class="form-control" id="datecreated" value="#{OperationDetailsMBean.details.datecreated}" title="Datecreated" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <h:outputLabel class="control-label col-sm-2"  value="Createdby:" for="createdby" />
+                                <div class="col-sm-10">
+                                    <h:inputText class="form-control"  id="createdby" value="#{OperationDetailsMBean.details.createdby}" title="Createdby" />
+                                </div>
+                            </div>-->
+
+                            
+
+                            <div class="form-group"> 
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <h:commandButton style="margin-right: 10px;" class="btn btn-primary" id="back" value="Back" action="#{OperationDetailsMBean.list()}"/>
+
+
+                                    <h:commandButton class="btn btn-success" id="update" value="Update" action="#{OperationDetailsMBean.update()}"/>
+                                </div>
+                            </div>
+
+                        </h:form>
+                    </f:view>
+                </div>
+
+            </ui:define>
+        </ui:composition>
+
+
+    </h:body>
+</html>
+

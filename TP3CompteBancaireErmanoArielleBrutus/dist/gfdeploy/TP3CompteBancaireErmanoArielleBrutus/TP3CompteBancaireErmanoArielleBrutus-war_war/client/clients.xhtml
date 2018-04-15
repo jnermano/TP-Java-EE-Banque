@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Clients</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="../template/template_admin.xhtml">
+            <ui:define name = "content">
+
+
+                <a href="newclient.xhtml">Nouveau client</a>
+
+                <f:view>
+
+
+                    <h:form>
+                        <h3><h:outputText value="Liste des clients"/></h3>
+
+                        <p:dataTable value="#{clientMBean.allClient}" var="item">
+
+                            <p:column headerText="ID"  
+                                      sortBy="#{item.id}"  >  
+                                <h:link outcome="#{clientMBean.showDetails(item.id)}" value="#{item.id}"/> 
+                            </p:column>
+                            <p:column sortBy="#{item.nom}">
+                                <f:facet name="header">
+                                    <h:outputText value="Nom"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nom}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.prenom}">
+                                <f:facet name="header">
+                                    <h:outputText value="Prenom"/>
+                                </f:facet>
+                                <h:outputText value="#{item.prenom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tel"/>
+                                </f:facet>
+                                <h:outputText value="#{item.tel}"/>
+                            </p:column>
+                            <p:column sortBy="#{item.datecreated}">
+                                <f:facet name="header">
+                                    <h:outputText value="Date"/>
+                                </f:facet>
+                                <h:outputText value="#{item.datecreated}"/>
+                            </p:column>
+                        
+                        </p:dataTable>
+                    </h:form>
+                </f:view>
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

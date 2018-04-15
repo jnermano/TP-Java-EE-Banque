@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+
+        <h:outputStylesheet name="vendor/bootstrap/css/bootstrap.min.css" />
+        <h:outputStylesheet name="vendor/font-awesome/css/font-awesome.min.css" />
+        <h:outputStylesheet name="vendor/select2/css/select2.min.css" />
+        <h:outputStylesheet name="vendor/datatables/dataTables.bootstrap4.css" />
+        <h:outputStylesheet name="css/simple-sidebar.css" />
+        <h:outputStylesheet name="css/main.css" />
+
+    </h:head>
+    <h:body>
+
+        <div id="wrapper" class="toggled">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="${facesContext.externalContext.requestContextPath}/">
+                            Gestionnaire de compte
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="${facesContext.externalContext.requestContextPath}/">
+                            <i class="fa fa-fw fa-dashboard"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item " data-toggle="tooltip" data-placement="right" title="clients">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#clientsCompos" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-user-o"></i>
+                            <span class="nav-link-text">Clients</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="clientsCompos">
+                            <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/client/clients.xhtml">
+                                    <i class="fa fa-fw fa-list"></i>
+                            <span class="nav-link-text">Liste</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/client/newclient.xhtml">
+                                    <i class="fa fa-fw fa-plus"></i>
+                            <span class="nav-link-text">Ajouter</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Comptes">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#comptesCompos" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-book"></i>
+                            <span class="nav-link-text">Comptes</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="comptesCompos">
+                           <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/compte/comptes.xhtml">
+                                    <i class="fa fa-fw fa-list"></i>
+                            <span class="nav-link-text">Liste</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/compte/newcompte.xhtml">
+                                    <i class="fa fa-fw fa-plus"></i>
+                            <span class="nav-link-text">Ajouter</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item " data-toggle="tooltip" data-placement="right" title="Transactions">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#opeCompos" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-globe"></i>
+                            <span class="nav-link-text">Transaction</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="opeCompos">
+                            <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/operation/operations.xhtml">
+                                    <i class="fa fa-fw fa-list"></i>
+                            <span class="nav-link-text">Liste</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="${facesContext.externalContext.requestContextPath}/faces/operation/newoperation.xhtml">
+                                    <i class="fa fa-fw fa-plus"></i>
+                            <span class="nav-link-text">Nouvelle</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            
+            <div class="header">
+                        <h2>NATIONALE BANQUE</h2>
+                        <P>La banque qui vous permet de garder l'équilibre.</P>
+                    </div>
+
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                
+                <div class="container-fluid">
+                    
+                    
+                    <ui:insert name="content">
+                        <ui:include src="content.xhtml"></ui:include>
+                    </ui:insert>
+
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+            
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Bootstrap core JavaScript -->
+        <h:outputScript name="vendor/jquery/jquery.min.js" />
+        <h:outputScript name="vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <h:outputScript name="vendor/select2/js/select2.min.js" />
+        <h:outputScript name="vendor/datatables/jquery.dataTables.js" />
+        <h:outputScript name="vendor/datatables/dataTables.bootstrap4.js" />
+        <h:outputScript name="js/main.js" />
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                //$("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+
+    </h:body>
+</html>
+
